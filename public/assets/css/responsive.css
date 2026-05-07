@@ -1,0 +1,367 @@
+/* Enhanced responsive for stunning mobile experience */
+
+/* Large desktop */
+
+@media (min-width: 1400px) {
+    .page-shell {
+        padding: 3rem 4rem;
+    }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+    .hero-content {
+        flex-direction: column;
+        /* Stack hero content on smaller desktops */
+        text-align: center;
+    }
+
+    .hero {
+        padding: 4rem 0;
+    }
+
+    .hero-copy {
+        max-width: 100%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+    .hero-content,
+    .product-hero,
+    .checkout-grid,
+    .cart-layout,
+    .account-grid,
+    .profile-dashboard-layout,
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .site-header {
+        padding: 0 2rem;
+        /* Adjust header padding */
+    }
+
+    .site-nav {
+        gap: 1rem;
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-actions {
+        order: 2;
+    }
+
+    .section-spacing {
+        padding: 3rem 0;
+        /* Adjust vertical spacing for tablets */
+    }
+
+    .profile-sidebar {
+        position: static;
+        width: 100%;
+    }
+
+    .profile-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0.5rem;
+        gap: 0.25rem;
+        border-radius: 1.5rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .profile-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .profile-nav a,
+    .profile-theme-toggle {
+        white-space: nowrap;
+        padding: 0.75rem 1.25rem;
+        flex-shrink: 0;
+    }
+
+    .profile-nav .nav-divider {
+        display: none;
+    }
+}
+
+/* Mobile tablet */
+@media (max-width: 900px) {
+    .product-hero {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .product-hero img {
+        max-height: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+    .page-shell {
+        padding: 1.5rem 1rem;
+    }
+
+    .site-header {
+        padding: 1rem;
+        /* position: relative; - already sticky, no need to override */
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        order: -1;
+    }
+
+    .site-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--bg);
+        flex-direction: column;
+        padding: 100px 40px;
+        gap: 2rem;
+        transition: left 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+        z-index: 2500;
+        margin: 0;
+    }
+
+    .menu-open .site-nav {
+        left: 0;
+    }
+
+    .site-nav a {
+        font-size: 1.5rem;
+    }
+
+    .main-content {
+        padding: 0 1rem;
+        /* Adjust main content padding for mobile */
+    }
+
+    .trust-bar {
+        grid-template-columns: 1fr;
+        padding: 1rem 1rem;
+    }
+
+    .search-form {
+        width: 100%;
+    }
+
+    .search-form input {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .theme-toggle {
+        display: none;
+    }
+
+    .section-spacing {
+        padding: 2.5rem 0;
+        /* Further adjust vertical spacing for mobile */
+    }
+
+    .account-card {
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+    }
+
+    .form-row,
+    .form-row.triplet {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .profile-header-card {
+        padding: 1.5rem;
+    }
+
+    /* Hero mobile */
+    .hero {
+        padding: 3rem 0;
+        min-height: auto;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        min-height: 250px;
+        border-radius: 1.5rem;
+    }
+
+    .hero-copy h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-copy h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Cards */
+    .product-card,
+    .category-card {
+        border-radius: 1.5rem;
+        /* transition: all 0.3s ease; - already global */
+    }
+
+    .product-card:active,
+    .category-card:active {
+        transform: scale(0.98);
+    }
+
+    /* This active state might conflict with the hover state, but it's for mobile touch */
+
+    .product-copy,
+    .product-details {
+        padding: 1.25rem;
+    }
+
+    /* Forms */
+    .checkout-form,
+    .contact-form {
+        padding: 2rem 1.5rem;
+        border-radius: 1.5rem;
+        margin: 0 -1rem;
+    }
+
+    input,
+    textarea {
+        padding: 1.1rem 1rem;
+        border-radius: 12px;
+        /* Keep consistent with theme.css */
+    }
+
+    input:active,
+    textarea:active {
+        transform: scale(0.99);
+    }
+
+    /* This active state might conflict with the focus state, but it's for mobile touch */
+
+    /* Cart */
+    .cart-item {
+        grid-template-columns: 80px 1fr auto;
+        gap: 1rem;
+        border-radius: 1.25rem;
+    }
+
+    .order-tracker {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .order-step {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.8rem;
+        border-radius: 0.75rem;
+    }
+
+    .order-item-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .order-pricing {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .order-pricing .button {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .hero-copy h1 {
+        font-size: 2rem;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .product-card img {
+        height: 85px;
+        /* Even smaller for high-density mobile grid */
+        /* Adjusted for 4-column mobile grid */
+    }
+
+    .product-footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .button {
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-content nav a {
+        margin: 0 0.75rem;
+    }
+
+    /* Search */
+    .search-form {
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Ultra small */
+@media (max-width: 360px) {
+    .page-shell {
+        padding: 1rem 0.5rem;
+    }
+
+    .cart-item {
+        grid-template-columns: 70px 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .page-shell {
+        padding: 1rem;
+    }
+}

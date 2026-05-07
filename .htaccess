@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteRule ^$ public/ [L]
+RewriteRule ^(public/.*)$ $1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/$1 [L,QSA]
+
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "DENY"
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+<FilesMatch "^(config|includes|sql)/.*$">
+    Require all denied
+</FilesMatch>
